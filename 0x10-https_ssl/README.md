@@ -1,22 +1,9 @@
-# :shell: 0x10 HAProxy & HTTPS/SSL :shell:
-
-In this project I will be securing my load balancer using SSL certs. I will be doing SSL Termination and SSL Proxy Forwarding as two methods of SSL communication.
-
-## :running: Getting Started
-
-* [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) - Operating system reqd.
-
-## :warning: Prerequisites
-
-* Must have `git` installed
-
-* Must have repository cloned
-
-
-```
-$ sudo apt-get install git
-```
-
-## :blue_book: Authors
-* **AZIZ EZZAGMOUNY** - [@EzzagmounyAZIZ](https://github.com/EzzagmounyAZIZ)
-
+# General
+- Allowed editors: vi, vim, emacs
+- All your files will be interpreted on Ubuntu 16.04 LTS
+- All your files should end with a new line
+- A README.md file, at the root of the folder of the project, is mandatory
+- All your Bash script files must be executable
+- Your Bash script must pass Shellcheck (version 0.3.7) without any error
+- The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
+- The second line of all your Bash scripts should be a comment explaining what is the script doing
