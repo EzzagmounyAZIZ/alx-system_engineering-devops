@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Check if the password argument is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <mysql_password>"
+    exit 1
+fi
+
+# MySQL root password
+MYSQL_PASSWORD=$1
+
+# Directory to store the backup
+BACKUP_DIR="/tmp/mysql_backup"
+mkdir -p "$BACKUP_DIR"
+
+# Generate backup filename with current date
+BACKUP_FILENAME="$(date +'%d-%m-%Y').tar.gz"
+
+# MySQL dump command
+mysqldump -uroot -p"${MYSQL_PASSWORD}" --all-databases > "$BACKUP_DIR/backup.sql"
+
+# Compress the backup file
+tar -czvf "$BACKUP_DIR/$BACKUP_FILENAME" -C "$BACKUP_DIR" backup.sql
+
+# Remove the uncompressed SQL dump
+rm "$BACKUP_DIR/backup.sql"
+
+# Display the backup filename
+echo "Backup created: $BACKUP_DIR/$BACKUP_FILENAME"
+
